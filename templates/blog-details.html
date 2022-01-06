@@ -13,7 +13,7 @@
           <h1>Blog details</h1>
           <nav aria-label="breadcrumb" class="banner-breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
             </ol>
           </nav>
@@ -27,10 +27,10 @@
   
 
   <!--================ Start Blog Post Area =================-->
-  <section class="blog-post-area section-margin">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8">
+    <section class="blog-post-area section-margin">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
             <div class="main_blog_details">
               {% if post.image_url %}
                 <img class="img-fluid" src="{{post.image_url}}" alt="post_image">
@@ -49,45 +49,45 @@
                   </div>
                 </div>
                 <p>{{post.text}}</p>
-               <div class="news_d_footer flex-column flex-sm-row">
-                 <a href="#"><span class="align-middle mr-2"><i class="ti-heart" style="color: red;"></i></span>{{post.likes_amount}} people like this</a>   
-                 <a class="justify-content-sm-center ml-sm-auto mt-sm-0 mt-2" href="#"><span class="align-middle mr-2"><i class="ti-themify-favicon"></i></span>{{post.comments|length}} Comments</a>
-                 <div class="news_socail ml-sm-auto mt-sm-0 mt-2">
-               <a href="#"><i class="fab fa-facebook-f"></i></a>
-               <a href="#"><i class="fab fa-twitter"></i></a>
-               <a href="#"><i class="fab fa-dribbble"></i></a>
-               <a href="#"><i class="fab fa-behance"></i></a>
-             </div>
-               </div>
-              </div>
+                <div class="news_d_footer flex-column flex-sm-row">
+                <a href="#"><span class="align-middle mr-2"><i class="ti-heart" style="color: red;"></i></span>{{post.likes_amount}} people like this</a>   
+                <a class="justify-content-sm-center ml-sm-auto mt-sm-0 mt-2" href="#"><span class="align-middle mr-2"><i class="ti-themify-favicon"></i></span>{{post.comments|length}} Comments</a>
+                <div class="news_socail ml-sm-auto mt-sm-0 mt-2">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-dribbble"></i></a>
+                <a href="#"><i class="fab fa-behance"></i></a>
+                </div>
+                </div>
+                </div>
           
 
-                <div class="comments-area">
+                  <div class="comments-area">
                     <h4>{{post.comments|length}} Comments</h4>
-                  {% for comment in post.comments %}
-                    <div class="comment-list">
+                    {% for comment in post.comments %}
+                      <div class="comment-list">
                         <div class="single-comment justify-content-between d-flex">
-                            <div class="user justify-content-between d-flex">
-                                <div class="desc">
-                                    <h5><a href="#">{{comment.author}}</a></h5>
-                                    <p class="date">{{comment.published_at}} </p>
-                                    <p class="comment">
-                                        {{comment.text}}
-                                    </p>
+                          <div class="user justify-content-between d-flex">
+                            <div class="desc">
+                              <h5><a href="#">{{comment.author}}</a></h5>
+                              <p class="date">{{comment.published_at}} </p>
+                              <p class="comment">
+                                {{comment.text}}
+                              </p>
                                 </div>
                             </div>
                             <div class="reply-btn">
-                                    <a href="" class="btn-reply text-uppercase">reply</a> 
+                              <a href="" class="btn-reply text-uppercase">reply</a> 
                             </div>
                         </div>   
-                    </div>
-                  {% endfor %}
+                      </div>
+                    {% endfor %}
+                  </div>
                 </div>
-        </div>
 
 
           <!-- Start Blog Post Siddebar -->
-          <div class="col-lg-4 sidebar-widgets">
+            <div class="col-lg-4 sidebar-widgets">
               <div class="widget-wrap">
                 <div class="single-sidebar-widget newsletter-widget">
                   <h4 class="single-sidebar-widget__title">Newsletter</h4>
@@ -175,7 +175,12 @@
         </div>
       </div>
       <div class="footer-bottom d-flex justify-content-center align-items-center flex-wrap">
-        <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        <p class="footer-text m-0">
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        </p>  
       </div>
     </div>
+  </div>  
 {% endblock %}
